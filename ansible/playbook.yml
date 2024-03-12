@@ -1,0 +1,58 @@
+- name: Wait for Jenkins server to be available
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Wait for SSH to become available
+      wait_for_connection:
+
+- name: Provision Jenkins Server
+  hosts: jenkins_server
+  become: true
+
+  tasks:
+    - name: Update software packages
+      become: true
+      dnf:
+        name: '*'
+        state: latest
+
+    - name: Add Jenkins repository
+      become: true
+      command: >
+        sudo wget -O /etc/yum.repos.d/jenkins.repo \
+        https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+    - name: Import Jenkins-CI key
+      become: true
+      command: >
+        sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+    - name: Install Java
+      become: true
+      dnf:
+        name: java-17-amazon-corretto
+        state: present
+
+    - name: Install Jenkins
+      become: true
+      dnf:
+        name: jenkins
+        state: present
+
+    - name: Enable Jenkins service at boot
+      become: true
+      systemd:
+        name: jenkins
+        enabled: yes
+
+    - name: Start Jenkins service
+      become: true
+      systemd:
+        name: jenkins
+        state: started
+
+    - name: Check Jenkins service status
+      become: true
+      systemd:
+        name: jenkins
+        state: restarted
