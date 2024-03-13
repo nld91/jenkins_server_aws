@@ -31,6 +31,10 @@ Configure AWS CLI with your credentials. The script will prompt you to enter you
 
 ## Deploying Jenkins on AWS
 
+Switch to the **terraform** directory:
+
+    cd terraform
+
 Initialize Terraform to download necessary plugins and prepare the working directory:
 
     terraform init
