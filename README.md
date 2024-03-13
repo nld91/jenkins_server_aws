@@ -55,7 +55,7 @@ The Terraform configuration will:
 
 - Provision an EC2 instance and a security group.
 
-- Generate a key pair for SSH access (if one does not already exist in ~/.ssh/id_rsa).
+- Store your RSA key (~/.ssh/id_rsa.pub) as an authorised key in the Jenkins server
 
 - Create an Ansible inventory file dynamically.
 
