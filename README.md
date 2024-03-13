@@ -22,7 +22,7 @@ Clone this repository to your local machine:
 
     cd jenkins-server-aws-terraform
 
-Run the included bash script to install necessary packages (Ansible, AWS CLI, etc.) on your local machine. This script detects your operating system and installs the appropriate packages (you may need to add execute permissions).
+Run the included bash script to install necessary packages (Terraform, Ansible, AWScli, etc.) on your local machine. This script detects your operating system and installs the appropriate packages (you may need to add execute permissions).
 
     sudo chmod +x ./dev_env.sh
     ./dev_env.sh
