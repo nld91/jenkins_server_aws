@@ -20,7 +20,7 @@ Clone this repository to your local machine:
 
     git clone https://github.com/nld91/jenkins_server_aws.git
 
-    cd jenkins-server-aws-terraform
+    cd jenkins-server-aws
 
 Run the included bash script to install necessary packages (Terraform, Ansible, AWScli, etc.) on your local machine. This script detects your operating system and installs the appropriate packages (you may need to add execute permissions).
 
