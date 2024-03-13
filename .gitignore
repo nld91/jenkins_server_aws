@@ -8,3 +8,4 @@ terraform/.terraform/providers/registry.terraform.io/hashicorp/template/2.2.0/li
 terraform/terraform.tfstate.backup
 terraform/.terraform.lock.hcl
 ansible/inventory.ini
+terraform.tfstate
